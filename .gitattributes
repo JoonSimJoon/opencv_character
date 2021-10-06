@@ -1,0 +1,5 @@
+opencv_ch/opencv_ch/opencv_world453d.dll filter=lfs diff=lfs merge=lfs -text
+opencv_ch/.vs/opencv_ch/v16/ipch/AutoPCH/fa4802a36bdefbd1/MAIN.ipch filter=lfs diff=lfs merge=lfs -text
+opencv_ch/opencv_world453.dll filter=lfs diff=lfs merge=lfs -text
+.vs/opencv_ch/v16/ipch/AutoPCH/fa4802a36bdefbd1/MAIN.ipch filter=lfs diff=lfs merge=lfs -text
+.vs/opencv_ch/v16/ipch/AutoPCH/89bd02292a4101ff/MAIN.ipch filter=lfs diff=lfs merge=lfs -text
