@@ -3,3 +3,6 @@ opencv_ch/.vs/opencv_ch/v16/ipch/AutoPCH/fa4802a36bdefbd1/MAIN.ipch filter=lfs d
 opencv_ch/opencv_world453.dll filter=lfs diff=lfs merge=lfs -text
 .vs/opencv_ch/v16/ipch/AutoPCH/fa4802a36bdefbd1/MAIN.ipch filter=lfs diff=lfs merge=lfs -text
 .vs/opencv_ch/v16/ipch/AutoPCH/89bd02292a4101ff/MAIN.ipch filter=lfs diff=lfs merge=lfs -text
+.vs/opencv_ch/v16/ipch/AutoPCH/9025024ff41749af/COLORING.ipch filter=lfs diff=lfs merge=lfs -text
+.vs/opencv_ch/v16/ipch/AutoPCH/8e426f378e8fd980/INIT.ipch filter=lfs diff=lfs merge=lfs -text
+.vs/opencv_ch/v16/ipch/AutoPCH/9276a915548b6617/PRINT.ipch filter=lfs diff=lfs merge=lfs -text
