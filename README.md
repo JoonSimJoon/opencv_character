@@ -16,3 +16,18 @@ vec3b는 BGR의 순서로 색깔이 있다
 
 
 
+------
+
+```
+git lfs track "*.ipch"
+git add .
+git commit -m"blabla"
+
+java -jar bfg.jar --strip-blobs-bigger-than 100M
+git repack && git gc
+java -jar bfg.jar --strip-blobs-bigger-than 100M
+git commit -m"vlavla"
+
+
+```
+
