@@ -15,13 +15,11 @@ int main(int argc, char** argv) {
 
 	//create image window
 	namedWindow("image", 1);
-
 	//create test Mat, 900 x 900
 	Mat testMat = Mat::zeros(900, 900, CV_8UC3);
 	Init_Map(arr, 64);
 	ColorMap(&testMat, arr, 64);
 	Print_Mat(&testMat);
-
 	//close all windows
 	destroyAllWindows();
 
