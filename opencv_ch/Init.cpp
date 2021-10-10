@@ -17,7 +17,7 @@ void Init_Map(int arr[][64], int size) {
 		}
 	}
 	for (int i = 0; i < 64; i += 8) {
-		Create_Random_noize(arr, 4, i / 2, 60 - i, 1);
+		Create_Random_noize(arr, 4, i / 2, 70 - i / 8 * 7, 1);
 	}
 	for (int i = 0; i < 10; i++) {
 		if(Cellular_Automata(arr, size)==1) break;
