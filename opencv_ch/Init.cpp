@@ -13,16 +13,16 @@ int dy[10] = { 1,0,-1,1,0,-1,1,0,-1, };
 void Init_Map(int arr[][64], int size) {
 	for (int i = 0; i < 64; i++) {
 		for (int j = 0; j < 64; j++) {
-			arr[i][j] = 0;
+			arr[i][j] = 1;
 		}
 	}
 	for (int i = 0; i < 64; i += 8) {
-		Create_Random_noize(arr, 4, i / 2, 70 - i / 8 * 7, 1);
+		Create_Random_noize(arr, 4, i / 2, 70 - i / 8 * 7, 0);
 	}
-	for (int i = 0; i < 10; i++) {
+	for (int i = 0; i < 16; i++) {
 		if(Cellular_Automata(arr, size)==1) break;
 	}
-	
+	Create_Border(arr, size);
 	//Create_Random_noize(arr, 4, 0, 70, 1);
 	//Create_Random_noize(arr, 4, 4, 60, 2);
 }
@@ -50,7 +50,7 @@ int Cellular_Automata(int arr[][64],int size){
 				if (i + dx[k] < 0 || i + dx[k] > size - 1 || j + dy[k] < 0 || j + dy[k] > size - 1) {
 					cnt--;
 				}
-				else if (arr[i+dx[k]][j+dy[k]] == 1) space++;
+				else if (arr[i+dx[k]][j+dy[k]] == 0) space++;
 			}
 			//std::cout << cnt << " " << space << std::endl;
 
@@ -76,6 +76,30 @@ int Cellular_Automata(int arr[][64],int size){
 			arr[i][j] = tmp[i][j];
 		}
 	}
-	if (xcnt < 64 ) return 1;
+	if (xcnt < 1 ) return 1;
 	else return 0;
+}
+
+void Create_Border(int arr[][64], int size){
+	memset(tmp, 0, sizeof(tmp));
+	for (int i = 0; i < size; i++) {
+		for (int j = 0; j < size; j++) {
+			if (arr[i][j] == 0) continue;
+			for (int k = 0; k < 9; k++) {
+				if (i + dx[k] < 0 || i + dx[k] > size - 1 || j + dy[k] < 0 || j + dy[k] > size - 1) {
+					continue;
+				}
+				else if (arr[i + dx[k]][j + dy[k]] == 0) {
+					tmp[i][j] = -1;
+					break;
+				}
+				else tmp[i][j] = arr[i][j];
+			}
+		}
+	}
+	for (int i = 0; i < 64; i++) {
+		for (int j = 0; j < 64; j++) {
+			arr[i][j] = tmp[i][j];
+		}
+	}
 }

@@ -31,3 +31,20 @@ git commit -m"vlavla"
 
 ```
 
+------
+
+
+
+Thema setting
+
+모든 공간의 테두리는 1- 2- 3 으로 진행됨
+
+NULL = 0
+
+RED = 1
+
+GREEN  = 2
+
+BlUE = 3
+
+BORDER = -1
