@@ -1,0 +1,3 @@
+*.ipch
+
+.vs\opencv_ch\v16\
