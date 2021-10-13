@@ -1,3 +1,2 @@
 *.ipch
-
-.vs\opencv_ch\v16\
+\.vs\opencv_ch\v16\
