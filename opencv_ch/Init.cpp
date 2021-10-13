@@ -3,7 +3,8 @@
 
 std::random_device rd;
 std::mt19937 gen(rd());
-std::uniform_int_distribution<int> dis(0, 20); //1num = 5%
+std::uniform_int_distribution<int> dis(0, 19); //1num = 5%
+std::uniform_int_distribution<int> tri(0, 2); //1num = 5%
 
 int tmp[64][64] = { 0, };
 int dx[10] = { 1,1,1,0,0,0,-1,-1,-1, };
@@ -11,16 +12,17 @@ int dy[10] = { 1,0,-1,1,0,-1,1,0,-1, };
 
 
 void Init_Map(int arr[][64], int size) {
+	int color = tri(gen) * 10 + 1;
 	for (int i = 0; i < 64; i++) {
 		for (int j = 0; j < 64; j++) {
-			arr[i][j] = 1;
+			arr[i][j] = color;
 		}
 	}
 	for (int i = 0; i < 64; i += 8) {
 		Create_Random_noize(arr, 4, i / 2, 70 - i / 8 * 7, 0);
 	}
 	for (int i = 0; i < 16; i++) {
-		if(Cellular_Automata(arr, size)==1) break;
+		if (Cellular_Automata(arr, size, color) == 1) break;
 	}
 	Create_Border(arr, size);
 	//Create_Random_noize(arr, 4, 0, 70, 1);
@@ -38,7 +40,7 @@ void Create_Random_noize(int arr[][64], int length, int start, int rate, int col
 	}
 }
 
-int Cellular_Automata(int arr[][64],int size){
+int Cellular_Automata(int arr[][64],int size, int color){
 	int cnt = 9;
 	int space = 0;
 	memset(tmp, 0, sizeof(tmp));
@@ -54,7 +56,7 @@ int Cellular_Automata(int arr[][64],int size){
 			}
 			//std::cout << cnt << " " << space << std::endl;
 
-			if (cnt / 2 < space) tmp[i][j] = 1;
+			if (cnt / 2 < space) tmp[i][j] = color;
 			//else tmp[i][j] = 0;
 
 			/*if (cnt%2==0 && space == cnt / 2) tmp[i][j] = arr[i][j];

@@ -41,10 +41,10 @@ Thema setting
 
 NULL = 0
 
-RED = 1
+BLUE = 01
 
-GREEN  = 2
+GREEN  = 11
 
-BlUE = 3
+RED = 21
 
 BORDER = -1

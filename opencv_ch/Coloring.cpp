@@ -11,17 +11,17 @@ void ColorMap(Mat* tmp, int arr[][64], int size) {
 					}
 				}
 			}
-			else if (arr[i][j] == 2) { //GREEN
+			else if (arr[i][j] == 11) { //GREEN
 				for (int y = 0; y < 10; y++) {
 					for (int x = 0; x < 10; x++) {
-						mat.at<Vec3b>(Point(y + i * 10 + 130, x + j * 10 + 130)) = Vec3b(0, 255, 85);
+						mat.at<Vec3b>(Point(y + i * 10 + 130, x + j * 10 + 130)) = Vec3b(0, 255, 30);
 					}
 				}
 			}
-			else if (arr[i][j] == 3) { //RED
+			else if (arr[i][j] == 21) { //RED
 				for (int y = 0; y < 10; y++) {
 					for (int x = 0; x < 10; x++) {
-						mat.at<Vec3b>(Point(y + i * 10 + 130, x + j * 10 + 130)) = Vec3b(0, 255, 85);
+						mat.at<Vec3b>(Point(y + i * 10 + 130, x + j * 10 + 130)) = Vec3b(66, 66, 245);
 					}
 				}
 			}
